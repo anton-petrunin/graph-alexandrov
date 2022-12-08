@@ -1,0 +1,240 @@
+\documentclass{article}
+\usepackage{quad}
+
+\def\thetitle{Graph comparison meets Alexandrov}
+\def\theauthors{Nina Lebedeva and Anton Petrunin}
+
+\hypersetup{pdftitle={\thetitle},
+pdfauthor={\theauthors}}
+
+\newcommand{\Addresses}{{\bigskip\footnotesize
+
+\noindent Nina Lebedeva,
+\par\nopagebreak
+ \textsc{Saint Petersburg State University, 7/9 Universitetskaya nab., St. Petersburg, 199034, Russia}
+\par
+\nopagebreak
+ \textsc{St. Petersburg Department of V.A. Steklov Institute of Mathematics of the Russian Academy of Sciences, 27 Fontanka nab., St. Petersburg, 191023, Russia}
+  \par\nopagebreak
+  \textit{Email}: \texttt{lebed@pdmi.ras.ru}
+
+\medskip
+
+\noindent   Anton Petrunin, 
+\par\nopagebreak
+ \textsc{Math. Dept. PSU, University Park, PA 16802, USA.}
+  \par\nopagebreak
+  \textit{Email}: \texttt{petrunin@math.psu.edu}
+  
+}}
+
+\begin{document}
+%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
+
+
+\title{\thetitle}
+\author{\theauthors}
+
+\date{}
+\maketitle
+\begin{abstract}
+Graph comparison is a certain type of condition on metric space encoded by a finite graph.
+We show that any nontrivial graph comparison implies one of two Alexandrov's comparisons.
+The proof gives a complete descriptions of graphs that have trivial graph comparison.
+\end{abstract}
+
+The notion of graph comparison introduced in \cite{lebedeva-petrunin-zolotov}.
+It was studied further in \cite{toyoda,toyoda2019,lebedeva-petrunin-CBB,lebedeva,lebedeva-petrunin,lebedeva-petrunin-octahedron}.
+Let us mention some of the results.
+\begin{itemize}
+\item Graph comparison captures nonnegative and nonpositive curvature in the sense of Alexandrov.
+\item Graph comparison for certain trees is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm}.
+\item The all-tree comparison it gives a metric description of target spaces of submersions from susets of Hilbert space.
+\item For certain tree, graph comparison has tight relation with the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger and Xu-Jia Wang~\cite{ma-trudinger-wang}.
+\item Octahedron comparison holds in products of trees.
+\end{itemize}
+We will show that any nontrivial graph comparison implies one of two Alexandrov's comparisons.
+
+Let us start with the definition.
+Suppose $\Gamma$ is a graph with vertices $v_1,\dots,v_n$.
+We write $v_i\sim v_j$ (or $v_i\nsim v_j$) if $v_i$ is adjacent (respectively nonadjacent) to $v_j$.
+
+A metric space $X$ meets the \emph{$\Gamma$-comparison} if for any $n$ points in $X$ labeled by vertices of $\Gamma$ there is a model configuration $\tilde v_1,\dots,\tilde v_n$ in the Hilbert space $\HH$ such that 
+\begin{align*}
+v_i\sim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\HH}\le | v_i-v_j|_{X},
+\\
+v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\HH}\ge | v_i-v_j|_{X};
+\end{align*}
+here $|\ -\ |_X$ denotes distance in the metric space~$X$.
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-10}
+\end{wrapfigure}
+
+Denote by $T_3$ and $C_4$ and tripod and four-cycle shown on the diagram.
+The $C_4$-comparison is equivalent to nonnegative curvature,
+and $T_3$-comparison are equivalent to the nonpositive curvature in the sense of Alexandrov \cite{lebedeva-petrunin-zolotov}.
+These definitions usually applied to length spaces, but they can be applied to general metric spaces;
+the latter convention is used in \cite{alexander2019alexandrov}.
+
+\begin{thm}{Theorem}
+Let $\Gamma$ be an arbitrary finite graph.
+Then either $\Gamma$-comparison holds in any metric space,
+or it implies $C_4$- or $T_3$-comparison.
+\end{thm}
+
+The proposition below gives a description of all graphs $\Gamma$ with trivial $\Gamma$-comparison.
+
+\parit{Proof.}
+Suppose $\Gamma$ has connected components $\Gamma_1,\dots,\Gamma_k$.
+Observe that $\Gamma$-comparison holds in a metric space $X$ if and only if so does every $\Gamma_i$-comparison.
+Therefore we can assume that $\Gamma$ is connected.
+
+Suppose $\Gamma$ is a graph with vertices $v_1,\dots,v_n$ as before.
+Let $e$ be an edge in $\Gamma$; we can assume that it connects $v_1$ to $v_2$.
+Remove $v_1$ and $v_2$ from $\Gamma$ and add a new vertex $w$ such that for any other vertex $u$ we have
+\begin{itemize}
+ \item if $u\sim v_1$ and $u\sim v_2$, then $u\sim w$;
+ \item if $u\nsim v_1$ and $u\nsim v_2$, then $u\nsim w$;
+ \item in the remaining cases we can choose arbitrarily $u\sim w$ or $u\nsim w$.
+\end{itemize}
+Denote the obtained graph by $\Gamma'$.
+
+Applying the definition of $\Gamma$-comparison with $v_1=v_2$, we get the following.
+
+\begin{thm}{Claim}
+If $\Gamma$-comparison holds in a metric space $X$, then so does $\Gamma'$-comparison.
+
+\end{thm}
+
+The operation that produce $\Gamma'$ from $\Gamma$ will be called \emph{edge shrinking}.
+If a graph $\Delta$ can be obtained from $\Gamma$ applying edge shrinking several times, then we will write $\Delta\prec \Gamma$.
+
+Note that the claim implies the following two statements:
+\begin{itemize}
+ \item If $\Delta$ is induced subgraph of a connected finite graph $\Gamma$, then $\Delta\prec \Gamma$.
+ \item If $\Delta\prec \Gamma$, then $\Gamma$-comparison implies $\Delta$-comparison.
+\end{itemize}
+Taking all above into account, we get the following reformulation of the theorem.
+
+\begin{thm}{Reformulation}
+For any finite connected graph $\Gamma$
+\begin{enumerate}[(a)]
+\item $\Gamma$-comparison holds in any metric space,  or
+\item $C_4\prec \Gamma$, or
+\item $T_3\prec \Gamma$.
+\end{enumerate}
+\end{thm}
+
+A connected graph will be called \emph{multipath} if it has an integer function $\ell$ on the set of the vertex set such that 
+$v$ is adjacent to $w$ if and only if $$|\ell(v)-\ell(w)|\le 1.$$
+The value $\ell(w)$ will be called \emph{level} of the vertex $w$.
+A multipath is completely described by a sequence of integers that give the number of vertexes on each level.
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-20}
+\end{figure}
+For example, the multipath shown on the diagram can be described by the sequence $(3,1,2,1,2,2,1,1,1,2)$. 
+
+\begin{thm}{Lemma}
+Let $\Gamma$ be a connected finite graph such that $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
+Then $\Gamma$ is a multipath.
+\end{thm}
+
+\parit{Proof of the lemma.}
+Let us denote by $|\ -\ |_\Gamma$ the path metric on the vertex set of $\Gamma$;
+it is equal to the number of edges in a shortest path connecting two vertices.
+Note that it is sufficient to show that 
+\[|u-w|_\Gamma\ge |u-v|_\Gamma\ge|v-w|_\Gamma\ge 2
+\quad\Longrightarrow\quad |u-w|_\Gamma=|u-v|_\Gamma+|v-w|_\Gamma
+\leqno({*})\]
+for any theree vertices $u$, $v$, and $w$ in $\Gamma$.
+
+Suppose $({*})$ does not hold for $u$, $v$, and $w$.
+Let us pass to a minimal connected induced subgraph $\Delta$ of $\Gamma$ that contains $u$, $v$, and $w$ and $({*})$ does not hold.
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-25}
+\end{figure}
+Note that $\Delta$ is either a cycle
+or it has three paths from a vertex, say $o$, to each of $u$, $v$, and $w$ such that each of these paths does not visit the remaining vertices in the triple $u$, $v$, $w$.
+In the first case $C_4\prec\Delta$, and in the second $T_3\prec\Delta$.
+By the observation above $\Delta\prec\Gamma$ --- the lemma is proved.
+\qeds
+
+
+
+
+\begin{thm}{Proposition}\label{lem:multipath}
+Let $\Gamma$ be a multipath with sequence $(k_1,\dots, k_m)$.
+Suppose $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
+Then 
+\begin{enumerate}[(a)]
+ \item\label{lem:multipath:5} If $m\ge 5$, then $k_i=1$ for any $3\le i\le m-2$.
+ \item\label{lem:multipath:4} If $m= 4$, then $k_2=1$ or $k_3=1$.
+ \item\label{lem:multipath:3} If $m= 3$, then $k_1=1$, $k_2=1$, or $k_3=1$.
+\end{enumerate}
+
+\end{thm}
+
+\parit{Proof of the proposition.} Assuming the contrary in each case we get
+
+\parit{(\ref{lem:multipath:5}).}
+If $m\ge 5$, then the multipath $(1,1,2,1,1)$ is induced subgraph of~$\Gamma$.
+
+\parit{(\ref{lem:multipath:4}).}
+If $m=4$, then the multipath $(1,2,2,1)$ is induced subgraph of~$\Gamma$.
+
+\parit{(\ref{lem:multipath:3}).}
+If $m=3$, then the multipath $(2,2,2)$ is induced subgraph of~$\Gamma$.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-30}
+\end{figure}
+
+In each case, we arrive at a contradiction by applying edge shrinking to the marked edges as shown on the diagram.
+\qeds
+
+
+It remains to show that $\Gamma$-comparison holds in any metric space for every multipath $\Gamma$ described in \ref{lem:multipath}.
+This is done by describing coordinates of points in model configuration on the real line.
+
+Each edge of $\Gamma$ comes with weight --- the distance between the endpoints in $X$.
+Define the distance $\|v-w\|_\Gamma$ as the minimal total weight of path connecting $v$ to $w$ in $\Gamma$.
+Note that 
+\[\|v-w\|_\Gamma\ge |v-w|_X\]
+for any $v$ and $w$.
+
+If $m\le 2$ then $\Gamma$ is a complete graph.
+In this case $\Gamma$-comparison is trivial.
+It remains to consider cases $m\ge3$.
+
+Let us choose a special vertex $v$ in $\Gamma$ that is unique on its level.
+Namely, if $m\ge 5$, then $v$ is on the third level.
+If $m=4$, then we can assume that $k_2=1$; in this case choose $v$ on the second level.
+Finally, if $m=3$, let $v$ be any vertex that is unique on its level; it exists by the proposition. 
+
+For every vertex $v_i$, let
+\[\tilde v_i=\pm \|v-v_i\|_\Gamma,\]
+where the sign is plus if $w$ has higher level and minus otherwise.
+By triangle inequality, the obtained configuration $\tilde v_1,\dots,\tilde v_n$ meets the condition of $\Gamma$-comparison.
+\qeds
+
+
+
+
+\parbf{Acknowledgments.}
+The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070, the second author was partially supported by the National Science Foundation grant DMS-2005279.
+
+{\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\Addresses
+\end{document}
+
+Mathematics Research Reports?
