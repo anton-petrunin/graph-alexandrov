@@ -66,6 +66,7 @@ v_i\sim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\HH}\le | v_i-v_j|
 v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\HH}\ge | v_i-v_j|_{X};
 \end{align*}
 here $|\ -\ |_X$ denotes distance in the metric space~$X$.
+(Note that $v_i$ may refer to a vertex in $\Gamma$ and to the corresponding point in $X$.)
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-6mm
@@ -85,9 +86,25 @@ Then either $\Gamma$-comparison holds in any metric space,
 or it implies $C_4$- or $T_3$-comparison.
 \end{thm}
 
-The proposition below gives describes all graphs $\Gamma$ with trivial $\Gamma$-comparison.
+The following corollary describes all graphs $\Gamma$ with trivial $\Gamma$-comparison;
+it follows from the proof of the theorem.
 
-\parit{Proof.}
+\begin{thm}{Corollary} Let $\Gamma$ be a finite connected graph.
+Suppose that $\Gamma$-comparison is trivial;
+that is, it holds in any metric space.
+Then $\Gamma$ can be constructed from a path $P_{\ell}$ of length $\ell\ge 0$ and two complete graphs $K_{m_1}$, $K_{m_2}$ by attaching $k_1$ vertices of $K_{m_1}$ to the left end of $P_{\ell}$ and $k_2$ vertices of $K_{m_2}$ to the right end of~$P_{\ell}$.
+\end{thm}
+
+Note that the graph $\Gamma$ in the corollary is described by a 5-array of integers $(m_1,k_1,\ell,k_2,m_2)$ such that $m_i\geqslant k_i$, $\ell \geqslant 0$, and $k_i>0$ if $n_i>0$.
+Examples of graphs with their 5-arrays are given on the diagram.
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-15}
+\end{figure}
+
+
+
+\section*{Proof}
 Suppose $\Gamma$ has connected components $\Gamma_1,\dots,\Gamma_k$.
 Observe that $\Gamma$-comparison holds in a metric space $X$ if and only if so does every $\Gamma_i$-comparison.
 Therefore we can assume that $\Gamma$ is connected.
@@ -102,7 +119,7 @@ Remove $v_1$ and $v_2$ from $\Gamma$ and add a new vertex $w$ such that for any 
 \end{itemize}
 Denote the obtained graph by $\Gamma'$.
 
-Applying the definition of $\Gamma$-comparison with $v_1=v_2$, we get the following.
+Applying the definition of $\Gamma$-comparison assuming that $v_1=v_2$ in $X$, we get the following.
 
 \begin{thm}{Claim}
 If $\Gamma$-comparison holds in a metric space $X$, then so does $\Gamma'$-comparison.
@@ -136,7 +153,7 @@ Multipath is completely described by a sequence of integers that give the number
 \centering
 \includegraphics{mppics/pic-20}
 \end{figure}
-For example, the multipath shown on the diagram can be described by the sequence $(3,1,2,1,2,2,1,1,1,2)$. 
+For example, on the diagram you see multipath $(3,1,2,1,2,2,1,1,1,2)$. 
 
 \begin{thm}{Lemma}
 Let $\Gamma$ be a connected finite graph such that $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
@@ -168,32 +185,32 @@ By the observation above $\Delta\prec\Gamma$ --- the lemma is proved.
 
 
 \begin{thm}{Proposition}\label{lem:multipath}
-Let $\Gamma$ be a multipath with sequence $(k_1,\dots, k_m)$.
+Let $\Gamma$ be a multipath with sequence $(k_0,\dots, k_m)$.
 Suppose $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
 Then 
 \begin{enumerate}[(a)]
- \item\label{lem:multipath:5} If $m\ge 5$, then $k_i=1$ for any $3\le i\le m-2$.
- \item\label{lem:multipath:4} If $m= 4$, then $k_2=1$ or $k_3=1$.
- \item\label{lem:multipath:3} If $m= 3$, then $k_1=1$, $k_2=1$, or $k_3=1$.
+ \item\label{lem:multipath:5} If $m\ge 4$, then $k_2=\dots=k_{m-2}=1$.
+ \item\label{lem:multipath:4} If $m= 3$, then $k_1=1$ or $k_2=1$.
+ \item\label{lem:multipath:3} If $m= 2$, then $k_0=1$, $k_1=1$, or $k_2=1$.
 \end{enumerate}
 
 \end{thm}
+
+\parit{Proof of the proposition.} Assuming the contrary in each case we get
+
+\parit{(\ref{lem:multipath:5}).}
+If $m\ge 4$, then multipath $(1,1,2,1,1)$ is an induced subgraph of~$\Gamma$.
+
+\parit{(\ref{lem:multipath:4}).}
+If $m=3$, then multipath $(1,2,2,1)$ is an induced subgraph of~$\Gamma$.
+
+\parit{(\ref{lem:multipath:3}).}
+If $m=2$, then multipath $(2,2,2)$ is an induced subgraph of~$\Gamma$.
 
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-30}
 \end{figure}
-
-\parit{Proof of the proposition.} Assuming the contrary in each case we get
-
-\parit{(\ref{lem:multipath:5}).}
-If $m\ge 5$, then the multipath $(1,1,2,1,1)$ is an induced subgraph of~$\Gamma$.
-
-\parit{(\ref{lem:multipath:4}).}
-If $m=4$, then the multipath $(1,2,2,1)$ is an induced subgraph of~$\Gamma$.
-
-\parit{(\ref{lem:multipath:3}).}
-If $m=3$, then the multipath $(2,2,2)$ is an induced subgraph of~$\Gamma$.
 
 In each case, we arrive at a contradiction by applying edge shrinking to the marked edges as shown on the diagram.
 \qeds
@@ -208,20 +225,21 @@ Note that
 \[\|v-w\|_\Gamma\ge |v-w|_X\]
 for any $v$ and $w$.
 
-If $m\le 2$ then $\Gamma$ is a complete graph.
+If $m\le 1$ then $\Gamma$ is a complete graph.
 In this case, $\Gamma$-comparison is trivial.
-It remains to consider cases $m\ge3$.
+It remains to consider cases $m\ge2$.
 
-Let us choose a special vertex $v$ in $\Gamma$ that is unique on its level.
-Namely, if $m\ge 5$, then $v$ is on the third level.
-If $m=4$, then we can assume that $k_2=1$; in this case choose $v$ on the second level.
-Finally, if $m=3$, let $v$ be any vertex that is unique on its level; it exists by the proposition. 
+Let us choose a special vertex $w$ that is unique on its level and not too far from the middle of $\Gamma$.
+Namely, if $m\ge 4$, then choose $w$ on the second level; by the proposition it is unique on its level.
+If $m=3$, then by the proposition we can assume that $k_2=1$; in this case choose $w$ on the second level.
+Finally, if $m=2$, let $w$ be any vertex that is unique on its level; it exists by the proposition. 
 
 For every vertex $v_i$, let
-\[\tilde v_i=\pm \|v-v_i\|_\Gamma,\]
-where the sign is plus if $v_i$ has a higher level than $v$ and minus otherwise.
+\[\tilde v_i=\pm \|w-v_i\|_\Gamma,\]
+where the sign is plus if $v_i$ has a higher level than $w$ and minus otherwise.
 By the triangle inequality, the obtained configuration $\tilde v_1,\dots,\tilde v_n$ meets the condition of $\Gamma$-comparison.
 \qeds
+
 
 \parbf{Acknowledgments.}
 The first author was partially supported by the Russian Foundation for Basic Research grant 20-01-00070; the second author was partially supported by the National Science Foundation grant DMS-2005279.
