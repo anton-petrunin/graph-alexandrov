@@ -47,11 +47,11 @@ The notion of graph comparison was introduced in \cite{lebedeva-petrunin-zolotov
 It was studied further in \cite{toyoda,toyoda2019,lebedeva-petrunin-CBB,lebedeva,lebedeva-petrunin,lebedeva-petrunin-octahedron}.
 Let us mention some of the results.
 \begin{itemize}
-\item Graph comparison captures nonnegative and nonpositive curvature in the sense of Alexandrov.
-\item Graph comparison for certain trees is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm}.
-\item The all-tree comparison gives a metric description of target spaces of submersions from subets of Hilbert space.
-\item For a certain tree, graph comparison has tight relation with the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger, and Xu-Jia Wang~\cite{ma-trudinger-wang}.
-\item Octahedron comparison holds in products of trees.
+\item Graph comparisons for the tripod and four-cycle capture nonnegative and nonpositive curvature in the sense of Alexandrov; see below.
+\item Graph comparison for certain trees is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
+\item The all-tree comparison gives a metric description of target spaces of submetries from subsets of Hilbert space \cite{lebedeva-petrunin-zolotov}.
+\item For a certain tree, graph comparison has tight relation with the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger, and Xu-Jia Wang~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
+\item Octahedron comparison holds in products of trees~\cite{lebedeva-petrunin-octahedron}.
 \end{itemize}
 We will show that any nontrivial graph comparison implies one of two Alexandrov's comparisons.
 
@@ -95,16 +95,16 @@ that is, it holds in any metric space.
 Then $\Gamma$ can be constructed from a path $P_{\ell}$ of length $\ell\ge 0$ and two complete graphs $K_{m_1}$, $K_{m_2}$ by attaching $k_1$ vertices of $K_{m_1}$ to the left end of $P_{\ell}$ and $k_2$ vertices of $K_{m_2}$ to the right end of~$P_{\ell}$.
 \end{thm}
 
-Note that the graph $\Gamma$ in the corollary is described by a 5-array of integers $(m_1,k_1,\ell,k_2,m_2)$ such that $m_i\geqslant k_i$, $\ell \geqslant 0$, and $k_i>0$ if $n_i>0$.
-Examples of graphs with their 5-arrays are given on the diagram.
+Note that the graph $\Gamma$ in the corollary is described by five integers $(m_1$, $k_1$, $\ell$, $k_2$, $m_2)$ such that $\ell \geqslant 0$, $m_i\geqslant k_i\ge 0$, and $k_i>0$ if $m_i>0$ for each $i$.
+Examples of such graphs and their 5-arrays are shown below.
 \begin{figure}[ht!]
 \centering
 \includegraphics{mppics/pic-15}
 \end{figure}
 
+\bigskip
 
-
-\section*{Proof}
+\parbf{Proof.}
 Suppose $\Gamma$ has connected components $\Gamma_1,\dots,\Gamma_k$.
 Observe that $\Gamma$-comparison holds in a metric space $X$ if and only if so does every $\Gamma_i$-comparison.
 Therefore we can assume that $\Gamma$ is connected.
@@ -151,9 +151,11 @@ The value $\ell(w)$ will be called the \emph{level} of the vertex $w$.
 Multipath is completely described by a sequence of integers that give the number of vertexes on each level.
 \begin{figure}[ht!]
 \centering
+\medskip
 \includegraphics{mppics/pic-20}
+\medskip
 \end{figure}
-For example, on the diagram you see multipath $(3,1,2,1,2,2,1,1,1,2)$. 
+An example of a multipath with its sequence is shown on the diagram. 
 
 \begin{thm}{Lemma}
 Let $\Gamma$ be a connected finite graph such that $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
@@ -207,13 +209,13 @@ If $m=3$, then multipath $(1,2,2,1)$ is an induced subgraph of~$\Gamma$.
 \parit{(\ref{lem:multipath:3}).}
 If $m=2$, then multipath $(2,2,2)$ is an induced subgraph of~$\Gamma$.
 
+In each case, we arrive at a contradiction by applying edge shrinking to the marked edges as shown on the diagram.
+
 \begin{figure}[h!]
 \centering
 \includegraphics{mppics/pic-30}
 \end{figure}
-
-In each case, we arrive at a contradiction by applying edge shrinking to the marked edges as shown on the diagram.
-\qeds
+\qedsf
 
 
 It remains to show that $\Gamma$-comparison holds in any metric space for every multipath $\Gamma$ described in \ref{lem:multipath}.

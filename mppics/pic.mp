@@ -61,6 +61,7 @@ z4=(4,0)*u;
 z5=(5,0)*u;
 z61=(6,-.5)*u;
 z62=(6,.5)*u;
+z7=(7,0)*u;
 z71=(7,-.5)*u;
 z72=(7,.5)*u;
 z41=(4,-.5)*u;
@@ -68,9 +69,9 @@ z42=(4,.5)*u;
 z51=(5,-.5)*u;
 z52=(5,.5)*u;
 
-draw z11--z12--z21--z22--z11--z21--z3--z4--z5--z61--z62--z71--z72--z62--z5;
+draw z11--z12--z21--z22--z11--z21--z3--z4--z5--z61--z62--z7--z61;
 draw z12--z22--z3;
-draw z71--z61--z72;
+draw z5--z62;
 
 z.shift1=(8,0)*u;
 
@@ -99,9 +100,9 @@ z.shift3=(19,0)*u;
 
 draw (z211--z212--z220--cycle)  shifted z.shift3;
 draw (z220--z231--z233--z220--z232)  shifted z.shift3;
-draw (z231{1,1}..{-1,1}z233)  shifted z.shift3;
+draw (z231{1,0}..{-1,0}z233)  shifted z.shift3;
 
-dOt z11,z12,z21,z22,z11,z21,z3,z4,z5,z61,z62,z71,z72,
+dOt z11,z12,z21,z22,z11,z21,z3,z4,z5,z61,z62,z7,
 z11+z.shift1,z12+z.shift1,z21+z.shift1,z22+z.shift1,z11+z.shift1,z21+z.shift1,z3+z.shift1,z41+z.shift1,z42+z.shift1,z51+z.shift1,z52+z.shift1,
 z11+z.shift2,z12+z.shift2,z21+z.shift2,z22+z.shift2,z11+z.shift2,z21+z.shift2,z3+z.shift2,
 z211+z.shift3,
@@ -111,10 +112,10 @@ z231+z.shift3,
 z232+z.shift3,
 z233+z.shift3;
 
-label.bot (btex $(4,2,2,2,4)$ etex,  z4 +(0,-.5)*u+(0,-2));
-label.bot (btex $(4,2,0,2,4)$ etex,  z3 +z.shift1+(0,-.5)*u+(0,-2));
-label.bot (btex $(4,2,0,0,0)$ etex,  z21 +z.shift2+(0,-2));
-label.bot (btex $(2,2,0,3,3)$ etex,  z220 +z.shift3+(0,-.5)*u+(0,-2));
+label.bot (btex $(4,2,2,2,3)$ etex,  z4 +(0,-.5)*u+(0,-5));
+label.bot (btex $(4,2,0,2,4)$ etex,  z3 +z.shift1+(0,-.5)*u+(0,-5));
+label.bot (btex $(4,2,0,0,0)$ etex,  z21 +z.shift2+(0,-5));
+label.bot (btex $(2,2,0,3,3)$ etex,  z220 +z.shift3+(0,-.5)*u+(0,-5));
 endfig;
 
 beginfig(20)
@@ -122,9 +123,9 @@ save u,p;
 u:=.5cm;
 path p[];
 
-z11=(1,-1)*u;
+z11=(1,-.5)*u;
 z12=(1,0)*u;
-z13=(1,1)*u;
+z13=(1,.5)*u;
 
 z21=(2,0)*u;
 
@@ -149,7 +150,7 @@ z101=(10,-.5)*u;
 z102=(10,.5)*u;
 
 draw z11--z13;
-draw z11{-1,1}..{1,1}z13;
+draw z11{-1,0}..{1,0}z13;
 
 draw z11--z21;
 draw z12--z21;
@@ -204,6 +205,8 @@ z91,
 z101,
 z102;
 
+
+label.bot (btex $(3,1,2,1,2,2,1,1,1,2)$ etex,  z61+(0,-3));
 endfig;
 
 beginfig(25) 
@@ -221,7 +224,7 @@ z.wwu=(.2,2)*u;
 z.wuu=(1.3,.7)*u;
 
 
-z.shift = (7,0)*u;
+z.shift = (9,0)*u;
 
 draw z.u--z.uv--z.v--z.vw--z.w--z.wwu--z.wuu--cycle;
 
