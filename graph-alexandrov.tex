@@ -11,10 +11,10 @@ pdfauthor={\theauthors}}
 
 \noindent Nina Lebedeva,
 \par\nopagebreak
- \textsc{Saint Petersburg State University, 7/9 Universitetskaya nab., St. Petersburg, 199034, Russia}
+ \textsc{St. Petersburg State University, 7/9 Universitetskaya nab., St. Petersburg, 199034, Russia}
 \par
 \nopagebreak
- \textsc{St. Petersburg Department of V.A. Steklov Institute of Mathematics of the Russian Academy of Sciences, 27 Fontanka nab., St. Petersburg, 191023, Russia}
+ \textsc{St. Petersburg Department of V. A. Steklov Institute of Mathematics of the Russian Academy of Sciences, 27 Fontanka nab., St. Petersburg, 191023, Russia}
   \par\nopagebreak
   \textit{Email}: \texttt{lebed@pdmi.ras.ru}
 
@@ -43,18 +43,40 @@ We show that any nontrivial graph comparison implies one of two Alexandrov's com
 The proof gives a complete description of graphs with trivial graph comparisons.
 \end{abstract}
 
+\parbf{Preface.}
 The notion of graph comparison was introduced in \cite{lebedeva-petrunin-zolotov}.
 It was studied further in \cite{toyoda,toyoda2019,lebedeva-petrunin-CBB,lebedeva,lebedeva-petrunin,lebedeva-petrunin-octahedron}.
 Let us mention some of the results.
 \begin{itemize}
 \item Graph comparisons for the tripod and four-cycle capture nonnegative and nonpositive curvature in the sense of Alexandrov; see below.
+\end{itemize}
+\begin{itemize}
 \item Graph comparison for certain trees is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
+\end{itemize}
+\begin{itemize}
 \item The all-tree comparison gives a metric description of target spaces of submetries from subsets of Hilbert space \cite{lebedeva-petrunin-zolotov}.
-\item For a certain tree, graph comparison has tight relation with the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger, and Xu-Jia Wang~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
+\end{itemize}
+
+\noindent
+\begin{minipage}
+{.80\textwidth}
+\begin{itemize}
+\item The comparison for the tree on the diagram has tight relation with the \emph{transport continuity property} and the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger, and Xu-Jia Wang~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{.17\textwidth}
+\centering
+\vskip-1mm
+\includegraphics{mppics/pic-5}
+\end{minipage}
+\begin{itemize}
 \item Octahedron comparison holds in products of trees~\cite{lebedeva-petrunin-octahedron}.
 \end{itemize}
+
 We will show that any nontrivial graph comparison implies one of two Alexandrov's comparisons.
 
+\parbf{Introduction.}
 Let us start with the definition.
 Suppose $\Gamma$ is a graph with vertices $v_1,\dots,v_n$.
 We write $v_i\sim v_j$ (or $v_i\nsim v_j$) if $v_i$ is adjacent (respectively nonadjacent) to $v_j$.
@@ -69,7 +91,7 @@ here $|\ -\ |_X$ denotes distance in the metric space~$X$.
 (Note that $v_i$ may refer to a vertex in $\Gamma$ and to the corresponding point in $X$.)
 
 \begin{wrapfigure}{r}{35 mm}
-\vskip-6mm
+\vskip-0mm
 \centering
 \includegraphics{mppics/pic-10}
 \end{wrapfigure}
@@ -104,7 +126,7 @@ Examples of such graphs and their 5-arrays are shown below.
 
 \bigskip
 
-\parbf{Proof.}
+\parbf{Proof of the theorem.}
 Suppose $\Gamma$ has connected components $\Gamma_1,\dots,\Gamma_k$.
 Observe that $\Gamma$-comparison holds in a metric space $X$ if and only if so does every $\Gamma_i$-comparison.
 Therefore we can assume that $\Gamma$ is connected.
@@ -137,7 +159,7 @@ Note that the claim implies the following two statements:
 Taking all the above into account, we get the following reformulation of the theorem.
 
 \begin{thm}{Reformulation}
-For any finite connected graph $\Gamma$
+For any finite connected graph $\Gamma$,
 \begin{enumerate}[(a)]
 \item $\Gamma$-comparison holds in any metric space,  or
 \item $C_4\prec \Gamma$, or
@@ -145,8 +167,9 @@ For any finite connected graph $\Gamma$
 \end{enumerate}
 \end{thm}
 
-A connected graph will be called \emph{multipath} if it has an integer function $\ell$ on the set of the vertex set such that 
-$v$ is adjacent to $w$ if and only if $$|\ell(v)-\ell(w)|\le 1.$$
+A connected graph will be called \emph{multipath} if it has an integer function $\ell$ on its vertex set such that 
+$v$ is adjacent to $w$ if and only if
+$$|\ell(v)-\ell(w)|\le 1.$$
 The value $\ell(w)$ will be called the \emph{level} of the vertex $w$.
 Multipath is completely described by a sequence of integers that give the number of vertexes on each level.
 \begin{figure}[ht!]
@@ -162,7 +185,7 @@ Let $\Gamma$ be a connected finite graph such that $C_4\nprec\Gamma$ and  $T_3\n
 Then $\Gamma$ is a multipath.
 \end{thm}
 
-\parit{Proof of the lemma.}
+\parit{Proof.}
 Let us denote by $|\ -\ |_\Gamma$ the path metric on the vertex set of $\Gamma$;
 it is equal to the number of edges in a shortest path connecting two vertices.
 Note that it is sufficient to show that 
@@ -198,7 +221,7 @@ Then
 
 \end{thm}
 
-\parit{Proof of the proposition.} Assuming the contrary in each case we get
+\parit{Proof.} Assuming the contrary in each case we get
 
 \parit{(\ref{lem:multipath:5}).}
 If $m\ge 4$, then multipath $(1,1,2,1,1)$ is an induced subgraph of~$\Gamma$.
@@ -227,12 +250,13 @@ Note that
 \[\|v-w\|_\Gamma\ge |v-w|_X\]
 for any $v$ and $w$.
 
-If $m\le 1$ then $\Gamma$ is a complete graph.
+If $m\le 1$, then $\Gamma$ is a complete graph.
 In this case, $\Gamma$-comparison is trivial.
 It remains to consider cases $m\ge2$.
 
 Let us choose a special vertex $w$ that is unique on its level and not too far from the middle of $\Gamma$.
-Namely, if $m\ge 4$, then choose $w$ on the second level; by the proposition it is unique on its level.
+Namely, if $m\ge 4$, then choose $w$ on the second level;
+by the proposition, it is unique on its level.
 If $m=3$, then by the proposition we can assume that $k_2=1$; in this case choose $w$ on the second level.
 Finally, if $m=2$, let $w$ be any vertex that is unique on its level; it exists by the proposition. 
 

@@ -17,6 +17,26 @@ linecap:=butt;
 %filenametemplate "%j-%1c.svg";
 outputformat := "eps";
 
+beginfig(5) 
+save u;
+u:=.5cm;
+
+z.o=origin;
+z.a=(1,0)*u;
+z.b=z.a rotated 72;
+z.c=z.a rotated 72 rotated 72;
+z.d=z.a rotated 72 rotated 72 rotated 72;
+z.e=z.a rotated 72 rotated 72 rotated 72 rotated 72;
+
+draw z.o--2*z.a;
+draw z.o--z.b;
+draw z.o--z.c;
+draw z.o--z.d;
+draw z.o--z.e;
+
+dOt z.o,z.a,2*z.a,z.b,z.c,z.d,z.e;
+
+endfig;
 
 beginfig(10) 
 save u;
