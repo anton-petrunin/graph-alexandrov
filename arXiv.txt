@@ -1,0 +1,11 @@
+graph-alexandrov.tex
+graph-alexandrov.bbl
+library.bib
+mppics/pic-5.eps
+mppics/pic-10.eps
+mppics/pic-15.eps
+mppics/pic-20.eps
+mppics/pic-25.eps
+mppics/pic-30.eps
+mppics/pic-45.eps
+quad.sty
