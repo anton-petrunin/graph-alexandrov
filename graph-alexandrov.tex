@@ -51,7 +51,7 @@ Let us mention some of the results.
 \item Graph comparisons for the tripod and four-cycle capture nonnegative and nonpositive curvature in the sense of Alexandrov; see below.
 \end{itemize}
 \begin{itemize}
-\item Graph comparison for certain trees is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
+\item Graph comparison for star graphs is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
 \end{itemize}
 \begin{itemize}
 \item The all-tree comparison gives a metric description of target spaces of submetries from subsets of Hilbert space \cite{lebedeva-petrunin-zolotov}.
@@ -96,7 +96,7 @@ here $|\ -\ |_X$ denotes distance in the metric space~$X$.
 \includegraphics{mppics/pic-10}
 \end{wrapfigure}
 
-Denote by $T_3$ and $C_4$ and tripod and four-cycle shown on the diagram.
+Denote by $T_3$ and $C_4$ the tripod and four-cycle shown on the diagram.
 The $C_4$-comparison is equivalent to nonnegative curvature,
 and $T_3$-comparison is equivalent to the nonpositive curvature in the sense of Alexandrov \cite{lebedeva-petrunin-zolotov}.
 These definitions are usually applied to length spaces, but they can be applied to general metric spaces;
@@ -117,7 +117,7 @@ that is, it holds in any metric space.
 Then $\Gamma$ can be constructed from a path $P_{\ell}$ of length $\ell\ge 0$ and two complete graphs $K_{m_1}$, $K_{m_2}$ by attaching $k_1$ vertices of $K_{m_1}$ to the left end of $P_{\ell}$ and $k_2$ vertices of $K_{m_2}$ to the right end of~$P_{\ell}$.
 \end{thm}
 
-Note that the graph $\Gamma$ in the corollary is described by five integers $(m_1$, $k_1$, $\ell$, $k_2$, $m_2)$ such that $\ell \geqslant 0$, $m_i\geqslant k_i\ge 0$, and $k_i>0$ if $m_i>0$ for each $i$.
+The graph $\Gamma$ in the corollary is described by five integers $(m_1$, $k_1$, $\ell$, $k_2$, $m_2)$ such that $\ell \geqslant 0$, $m_i\geqslant k_i\ge 0$, and $k_i>0$ if $m_i>0$ for each $i$.
 Examples of such graphs and their 5-arrays are shown below.
 \begin{figure}[ht!]
 \centering
@@ -137,7 +137,7 @@ Remove $v_1$ and $v_2$ from $\Gamma$ and add a new vertex $w$ such that for any 
 \begin{itemize}
  \item if $u\sim v_1$ and $u\sim v_2$, then $u\sim w$;
  \item if $u\nsim v_1$ and $u\nsim v_2$, then $u\nsim w$;
- \item in the remaining cases we can choose arbitrarily $u\sim w$ or $u\nsim w$.
+ \item in the remaining cases we may choose $u\sim w$ or $u\nsim w$.
 \end{itemize}
 Denote the obtained graph by $\Gamma'$.
 
@@ -209,7 +209,7 @@ By the observation above $\Delta\prec\Gamma$ --- the lemma is proved.
 
 
 
-\begin{thm}{Proposition}\label{lem:multipath}
+\begin{thm}{Proposition}
 Let $\Gamma$ be a multipath with sequence $(k_0,\dots, k_m)$.
 Suppose $C_4\nprec\Gamma$ and  $T_3\nprec\Gamma$.
 Then 
@@ -241,7 +241,7 @@ In each case, we arrive at a contradiction by applying edge shrinking to the mar
 \qedsf
 
 
-It remains to show that $\Gamma$-comparison holds in any metric space for every multipath $\Gamma$ described in \ref{lem:multipath}.
+It remains to show that $\Gamma$-comparison holds in any metric space for every multipath $\Gamma$ described in the proposition.
 This is done by prescribing the coordinates for the needed model configuration on the real line.
 
 Each edge of $\Gamma$ comes with weight --- the distance between the endpoints in $X$.
@@ -265,6 +265,29 @@ For every vertex $v_i$, let
 where the sign is plus if $v_i$ has a higher level than $w$ and minus otherwise.
 By the triangle inequality, the obtained configuration $\tilde v_1,\dots,\tilde v_n$ meets the condition of $\Gamma$-comparison.
 \qeds
+
+\parbf{Remarks.}
+The statements in the preface indicate that for a carefully chosen graph (or a family of graphs) its graph comparison is responsible for meaningful geometric properties of metric spaces.
+Let us state two more observations about graph comparison.
+
+Graph comparisons for all complete bipartite graphs imply the so-called \emph{pure inequalities of negative type} \cite[6.1.1]{deza-laurent}.
+By Schoenberg's criterion, these inequalities are sufficient for existence of isometric embedding into a Hilbert space \cite[6.2.1]{deza-laurent}.
+In particular the comparisons for all graphs imply that the metric space is isometric to a subset of a Hilbert space.
+The latter can be also proved the same way as Proposition 1.9 in \cite{toyoda}.
+
+\begin{wrapfigure}{r}{17 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-45}
+\vskip-2mm
+\end{wrapfigure}
+
+The last observation works for arbitrary metrics.
+For length metrics, most of graph comparisons imply that the space is isometric to a subset of a Hilbert space.
+Indeed if $C_4\prec\Gamma$ and $T_3\prec\Gamma$ (as for the graph on the diagam), then any complete length space that meets $\Gamma$-comparison has vanishing curvature in the sense of Alexandrov; in particular, it is isometric to a convex closed set in a Hilbert space.
+
+
+
 
 
 \parbf{Acknowledgments.}

@@ -226,7 +226,7 @@ z101,
 z102;
 
 
-label.bot (btex $(3,1,2,1,2,2,1,1,1,2)$ etex,  z61+(0,-3));
+label.bot (btex $(3,1,2,1,2,2,1,1,1,2)$ etex,  z61+(0,-3)+(-.5,0)*u);
 endfig;
 
 beginfig(25) 
@@ -412,6 +412,50 @@ z.cc22+z.sshift-z.cc,
 z.cc31+z.sshift-z.cc
 ;
 
+endfig;
+
+beginfig(40) 
+save u;
+u:=.5cm;
+
+z1=(0,0)*u;
+z2=(1,0)*u;
+z5=z2 rotated -90;
+z3=z5 rotated -60;
+z4=z2+z5 rotated 60;
+z6=z2+z5;
+z7=z5+.7*z5 rotated -20;
+z8=z5+.7*z5 rotated 20;
+z9=z7+z2;
+z10=z8+z2;
+
+draw z3--z1--z2--z4--z6--z2;
+draw z1--z5--z6;
+draw z7--z5--z8;
+draw z9--z6--z10;
+
+dOt z1,z2,z3,z4,z5,z6,z7,z8,z9,z10;
+endfig;
+
+beginfig(45) 
+save u;
+u:=.5cm;
+
+z2=origin;
+z3=(1,0)*u;
+z1=.8*z3 rotated 60;
+z6=z3 rotated -90;
+z7=z6+z3;
+z4=z6 rotated -45;
+z5=z3+z6 rotated 75;
+z8=z6+z6 rotated -20;
+z9=z7+z6 rotated 10;
+
+draw z4--z2--z3--z5;
+draw z8--z6--z2--z1--z3--z7--z9;
+draw z6--z7;
+
+dOt z1,z2,z3,z4,z5,z6,z7,z8,z9;
 endfig;
 
 end
