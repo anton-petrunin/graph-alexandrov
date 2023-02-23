@@ -1,0 +1,382 @@
+\documentclass{article}
+\usepackage{amssymb, amsfonts, amsmath, amsthm}
+\usepackage{enumerate}
+\usepackage{caption}
+\usepackage[colorlinks=true,
+citecolor=black,
+linkcolor=black,
+anchorcolor=black,
+filecolor=black,
+menucolor=black,
+urlcolor=black%,
+]{hyperref}
+\usepackage[normalem]{ulem}
+\usepackage{cancel}
+\usepackage{array}
+\usepackage{longtable}
+
+\usepackage{epsfig,lpic,wrapfig}
+\usepackage{bm}%makes better bold fornt in math
+\usepackage{multicol}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1,T2A]{fontenc}
+\usepackage[
+%slovak,
+german,
+%french,
+english,
+russian]{babel}
+
+\usepackage[
+sorting=debug,
+bibencoding=auto,
+backend=biber,
+maxnames=10,
+%babel=other,
+autolang=other,
+doi=false,
+url=false,
+style=numeric-comp,
+isbn=false]{biblatex}
+\usepackage{csquotes}
+\AtEveryBibitem{\clearlist{language}}
+\AtEveryBibitem{\clearlist{note}}
+\renewbibmacro{in:}{}
+\renewcommand*{\bibfont}{\scriptsize}
+\addbibresource{library.bib}
+
+\DeclareFieldFormat{postnote}{#1}
+\DeclareFieldFormat{multipostnote}{#1}
+\DeclareFieldFormat{pages}{#1}
+
+\newcommand{\nofootnote}[1]{%
+\begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
+
+\def\thetitle{Граф-сравниения и условия Александрова}
+\def\theauthors{Н. Д. Лебедева и А. М. Петрунин}
+\hypersetup{pdftitle={\thetitle},
+pdfauthor={\theauthors}}
+
+\newcommand{\Addresses}{{\bigskip\footnotesize
+
+\noindent Nina Lebedeva,
+\par\nopagebreak
+ \textsc{St. Petersburg State University, 7/9 Universitetskaya nab., St. Petersburg, 199034, Russia}
+\par
+\nopagebreak
+ \textsc{St. Petersburg Department of V. A. Steklov Institute of Mathematics of the Russian Academy of Sciences, 27 Fontanka nab., St. Petersburg, 191023, Russia}
+  \par\nopagebreak
+  \textit{Email}: \texttt{lebed@pdmi.ras.ru}
+
+\medskip
+
+\noindent   Anton Petrunin, 
+\par\nopagebreak
+ \textsc{Math. Dept. PSU, University Park, PA 16802, USA.}
+  \par\nopagebreak
+  \textit{Email}: \texttt{petrunin@math.psu.edu}
+  
+}}
+
+\def\parit#1{\medskip\noindent{\it #1}}
+\def\parbf#1{\medskip\noindent{\bf #1}}
+\def\qeds{\qed\par\medskip}
+\def\qedsf{\vskip-6mm\qeds}
+
+\renewcommand{\labelitemi}{$\mathsurround=0pt \diamond$}
+\renewcommand{\labelitemii}{$\mathsurround=0pt \circ$}
+
+%THEOREM
+\newcounter{thm}[section]
+\renewcommand{\thethm}{\arabic{thm}}
+\def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf\boldmath #1.}
+\it\ %\ignorespaces
+}
+\def\endclaim{
+\par\medskip}
+\newenvironment{thm}{\claim}{\endclaim}
+
+
+\begin{document}
+%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
+
+
+\title{\thetitle}
+\author{\theauthors}
+
+\date{}
+\maketitle
+\begin{abstract}
+Граф-сравнение это условие определённого типа на метрические пространства закодированное конечным графом.
+Мы доказываем, что любое нетривиальное граф-сравнение влечёт одно из двух условий Александрова.
+Доказательство также даёт классификацию графов с тривиальным сравнением.
+\end{abstract}
+
+\parbf{Предисловие.}
+Граф-сравнения были введены в \cite{lebedeva-petrunin-zolotov} и изучалось далее в \cite{toyoda,toyoda2019,lebedeva-petrunin-CBB,lebedeva,lebedeva-petrunin,lebedeva-petrunin-octahedron}.
+Перечислим некоторые из результатов.
+\begin{itemize}
+\item Граф-сравнения для триноги и четыре-цикла описывают условия Александрова (см. ниже).
+\end{itemize}
+\begin{itemize}
+\item Граф-сравнения для звёзд дают более сильный вариант так называемых \emph{неравенств Лэнга --- Шрёдера --- Штурма} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
+\end{itemize}
+\begin{itemize}
+\item Граф-сравнения для всех деревьев даёт описание пространств-образов субметрий из подмножеств гильбертова пространства \cite{lebedeva-petrunin-zolotov}.
+\end{itemize}
+
+\noindent
+\begin{minipage}
+{.80\textwidth}
+\begin{itemize}
+\item Граф-сравнение для дерева на рисунке, тесно связанно с \emph{непрерывностью решения транспортной задачи} и с так называемым \emph{условием Ма --- Трудингера --- Ванга}~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
+\end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}{.17\textwidth}
+\centering
+\vskip-1mm
+\includegraphics{mppics/pic-5}
+\end{minipage}
+\begin{itemize}
+\item Октоэдральное сравнение выполняется в произведении деревьев~\cite{lebedeva-petrunin-octahedron}.
+\end{itemize}
+
+Мы покажем, что любое нетривиальное граф-сравнение влечёт одно из двух условий Александрова.
+
+\parbf{Введение.}
+Начнём с определения.
+Пусть $\Gamma$ --- граф с вершинами $v_1,\dots,v_n$.
+Будем писать $v_i\sim v_j$ (или $v_i\nsim v_j$) если вершина $v_i$ соединена (соответственно не соединена) ребром с $v_j$.
+
+Метрическое пространство $X$ удовлетворяет \emph{$\Gamma$-сравнению} если для любых $n$ точек в $X$ обозначенных $v_1,\dots,v_n$ существует конфигурация сравнения --- набор точек $\tilde v_1,\dots,\tilde v_n$ в гильбертовом пространстве $\mathbb{H}$ такой, что
+\begin{align*}
+v_i\sim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\leqslant | v_i-v_j|_{X},
+\\
+v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqslant | v_i-v_j|_{X};
+\end{align*}
+где $|\ -\ |_X$ обозначает расстояние в~$X$.
+(Обратите внимание, что здесь $v_i$ относится и к вершине $\Gamma$ и к соответственной точке $X$.)
+
+\begin{wrapfigure}{r}{35 mm}
+\vskip-0mm
+\centering
+\includegraphics{mppics/pic-10}
+\end{wrapfigure}
+
+Обозначим через $T_3$ и $C_4$ триногу и четыре-цикл показанные на рисунке.
+Их сравнения эквивалентны соответственно неотрицательной и неположительной кривизне в смысле Александрова \cite{lebedeva-petrunin-zolotov}.
+Эти определения обычно используются для пространств с внутренней метрикой,
+однако их можно применять и к проивольным метрическим пространствам.
+Последнее соглашение используется например в \cite{alexander2019alexandrov}.
+
+\begin{thm}{Теорема}
+Пусть $\Gamma$ --- произвольный конечный граф.
+Тогда либо $\Gamma$-сравнение выполняется в любом метрическом пространстве,
+любо оно влечёт $C_4$- или $T_3$-сравнение.
+\end{thm}
+
+Утверждение ниже является следсвием из доказательства теоремы;
+оно описывает все графы с тривиальным сравнением.
+
+\begin{thm}{Следствие}
+Пусть $\Gamma$ --- конечный связный граф.
+Предположим, что $\Gamma$-сравнение тривиально;
+то есть, оно выполняется в любом метрическом пространстве.
+Тогда граф $\Gamma$ можно построить из пути $P_{\ell}$ длины $\ell\geqslant 0$ и двух полных графов $K_{m_1}$, $K_{m_2}$ подсоединив $k_1$ вершин $K_{m_1}$ к левому концу $P_{\ell}$ и $k_2$ вершин $K_{m_2}$ к правому концу $P_{\ell}$.
+\end{thm}
+
+Граф $\Gamma$ в этом следствии определяется пятёркой целых чисел $(m_1$, $k_1$, $\ell$, $k_2$, $m_2)$ таких, что $\ell \geqslant 0$, $m_i\geqslant k_i\geqslant 0$, и $k_i>0$ если $m_i>0$ для всякого $i$. 
+Примеры таких графов и их пятёрок показаны ниже.
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-15}
+\end{figure}
+
+\bigskip
+
+\parbf{Доказательство теоремы.}
+Предположим, что граф $\Gamma$ распадается на связные компоненты $\Gamma_1,\dots,\Gamma_k$.
+Заметим, что $\Gamma$-сравнение эквивалентно выполнению всех $\Gamma_i$-сравнений.
+Таким образом можно предположить, что $\Gamma$ связен.
+
+Положим как и выше, что $v_1,\dots,v_n$ --- вершины $\Gamma$.
+Удалим из $\Gamma$ пару вершин, скажем $v_1$ и $v_2$.
+Добавим вместо них новую вершину $w$ так, что для любой другой вершины $u$ выполняется следующее
+\begin{itemize}
+ \item если $u\sim v_1$ и $u\sim v_2$, то $u\sim w$;
+ \item если $u\nsim v_1$ и $u\nsim v_2$, то $u\nsim w$;
+ \item в остальных случаях можно выбрать $u\sim w$ или $u\nsim w$.
+\end{itemize}
+Пусть $\Gamma'$ --- полученный граф.
+
+Пролагая в определении $\Gamma$-сравнения, что $v_1=v_2$ в $X$,
+мы приходим к следующему.
+
+\begin{thm}{Утверждение}
+$\Gamma$-сравнение влечёт $\Gamma'$-сравнение.
+
+\end{thm}
+
+Приведённое построение $\Gamma'$ из $\Gamma$ будет называться \emph{слиянием вершин}.
+Если граф $\Delta$ можно получить из $\Gamma$ применив слияние вершин несколько раз, то мы будем писать $\Delta\prec \Gamma$.
+
+Заметим, что вышесказанное влечёт следующие два наблюдения:
+\begin{itemize}
+ \item Если $\Delta$ --- индуцированный подграф конечного графа $\Gamma$ тогда $\Delta\prec \Gamma$.
+ \item Если $\Delta\prec \Gamma$, то $\Gamma$-сравнение влечёт $\Delta$-сравнение.
+\end{itemize}
+Отсюда получаем следующую переформулировку теоремы.
+
+\begin{thm}{Переформулировка}
+Для любого конечного связного графа $\Gamma$, 
+\begin{enumerate}[(a)]
+\item $\Gamma$-сравнение тривиально или
+\item $C_4\prec \Gamma$ или
+\item $T_3\prec \Gamma$.
+\end{enumerate}
+\end{thm}
+
+Связный граф будем называть \emph{мультипутём} если существует целозначная функция $\ell$ определённая на его вершинах такая, что 
+$$v\sim w
+\quad\Longleftrightarrow\quad
+|\ell(v)-\ell(w)|\leqslant 1.$$
+Значение $\ell(w)$ будет называться \emph{уровнем} вершины $w$.
+Мультипуть полностью определяется целочисленной последовательностью, задающей количество вершин на каждом уровне.
+\begin{figure}[ht!]
+\centering
+\medskip
+\includegraphics{mppics/pic-20}
+\medskip
+\end{figure}
+Пример мультипути и его последовательность показаны на рисунке.
+
+\begin{thm}{Лемма}
+Если $\Gamma$ --- конечный связный граф такой, что $C_4\nprec\Gamma$ и $T_3\nprec\Gamma$,
+то $\Gamma$ --- мультипуть.
+\end{thm}
+
+\parit{Доказательство.}
+Обозначим через $|\ -\ |_\Gamma$ метрику кратчайшего пути на~$\Gamma$;
+она равна числу рёбер в кратчайшем пути между двумя вершинами.
+Достаточно доказать, что
+\[|u-w|_\Gamma\geqslant |u-v|_\Gamma\geqslant|v-w|_\Gamma\geqslant 2
+\quad\Longrightarrow\quad |u-w|_\Gamma=|u-v|_\Gamma+|v-w|_\Gamma
+\leqno({*})\]
+для любых трёх вершин $u$, $v$ и $w$ в $\Gamma$.
+
+Предположим, что $({*})$ не выполняется для $u$, $v$ и $w$.
+Рассмотрим подграф $\Delta$ в $\Gamma$ индуцированный тройкой кратчайших путей между $u$, $v$ и $w$.
+\begin{figure}[ht!]
+\centering
+\includegraphics{mppics/pic-25}
+\end{figure}
+Заметим, что $\Delta$ либо является циклом,
+либо он содержит три пути из некоторой вершины, скажем $o$, до  $u$, $v$ и $w$ таких, что каждый путь не заходит в оставшиеся вершины тройки.
+В этих случаях имеем $C_4\prec\Delta$ или $T_3\prec\Delta$ соответсвенно.
+Применив наблюдение выше, поучаем $\Delta\prec\Gamma$ --- лемма доказана.
+\qeds
+
+
+
+
+\begin{thm}{Предложение}
+Пусть $\Gamma$ --- мультипуть с последовательностью $(k_0,\dots, k_m)$.
+Предположим $C_4\nprec\Gamma$ и $T_3\nprec\Gamma$.
+Тогда
+\begin{enumerate}[(a)]
+ \item\label{lem:multipath:5} Если $m\geqslant 4$, то $k_2=\dots=k_{m-2}=1$.
+ \item\label{lem:multipath:4} Если $m= 3$, то $k_1=1$ или $k_2=1$.
+ \item\label{lem:multipath:3} Если $m= 2$, то $k_0=1$, $k_1=1$ или $k_2=1$.
+\end{enumerate}
+
+\end{thm}
+
+\parit{Доказательство.} Предполагая противное в каждом случае, получаем
+
+\parit{(\ref{lem:multipath:5})}
+если $m\geqslant 4$, то мултипуть $(1,1,2,1,1)$ --- индуцированный подграф в~$\Gamma$,
+
+\parit{(\ref{lem:multipath:4})}
+если $m=3$, то мултипуть $(1,2,2,1)$ --- индуцированный подграф в~$\Gamma$,
+
+\parit{(\ref{lem:multipath:3})}
+если $m=2$, то мултипуть $(2,2,2)$ --- индуцированный подграф в~$\Gamma$.
+
+В каждом случае мы приходим к противоречию, применив слияние вершин к концам отмеченный рёбер на рисунке.
+
+\begin{figure}[h!]
+\centering
+\includegraphics{mppics/pic-30}
+\end{figure}
+\qedsf
+
+Остаётся показать, что для любго мультипути $\Gamma$ описанного в предложении
+$\Gamma$-сравнение тривиально.
+Мы проделаем это явно указав координаты конфигурации сравнения на вещественной прямой.
+
+Каждое ребро в $\Gamma$ имеет вес --- расстояние между его концами в $X$.
+Определим расстояние $\|v-w\|_\Gamma$ как минимальный вес пути, соединяющего $v$ и $w$ в $\Gamma$.
+Заметим, что 
+\[\|v-w\|_\Gamma\geqslant |v-w|_X\]
+для любых $v$ и $w$.
+
+Если $m\leqslant 1$, то $\Gamma$ --- полный граф.
+В этом случае $\Gamma$-сравнение тривиально.
+Остаётся рассмотреть случаи $m\geqslant2$.
+
+Выберем вершину $w$, которая единстванна на своём уровне и не очень далека от середины $\Gamma$.
+А именно, если $m\geqslant 4$, то возьмём за $w$ вершину на втором уровне; 
+согласно предложению, она в нём единственна.
+Если $m=3$, то согласно предложению можно предположить, что $k_2=1$;
+в этом случае выберем $w$ на втором уровне.
+И наконец, если $m=2$, пусть $w$ будет единственной вершиной в своём уровне;
+по предложению такая существует.
+
+Для каждой вершины $v_i$, положим
+\[\tilde v_i=\pm \|w-v_i\|_\Gamma,\]
+здесь стоит знак плюс если уровень $v_i$ выше уровня $w$ и минус в противном случае.
+По неравенству треугольника, полученная конфигурация $\tilde v_1,\dots,\tilde v_n\in\mathbb{R}$ удовлетворяет $\Gamma$-сравнению.
+\qeds
+
+\parbf{Замечания.}
+Утверждения перечисленные в предисловии говорят, что сравнение для правильно выбранного графа (или семейства графов) отвечает за содержательное семейство метрических пространств.
+Далее мы приведём ещё пару наблюдений о граф-сравнении общего характера.
+
+Граф-сравнения для всех полных двудольных графов влекут так называемые \emph{чистые неравенства отрицательного типа} \cite[6.1.1]{deza-laurent-ru}.
+По критерию Шёнберга, этих неравенств достаточно для существования изометрического вложения в гильбетово пространство \cite[6.2.1]{deza-laurent}.
+В частности выпонение сравнений для всех графов влечёт, что метрическое пространство изометрично подмножеству гильбертова пространства.
+Последнее утверждение можно доказать также и тем же путём, что \cite[Prop. 1.9]{toyoda}
+
+
+\begin{wrapfigure}{r}{17 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-45}
+\vskip-2mm
+\end{wrapfigure}
+
+Предыдущие наблюдения выполняются для произвольных метрик.
+Для пространств с внутренней метрикой большинство граф-сравнений влекут то, что пространство изометрично подмножеству гильбертова пространства.
+Действительно, если $C_4\prec\Gamma$ и $T_3\prec\Gamma$ (как для графа на рисунке),
+то любое полное пространство с внутренней метрикой имеет нулевую кривизну в смысле Александрова; 
+в частности изометрично выпукому множеству гильбертова пространства.
+
+
+
+
+
+\parbf{Благодарности.}
+Мы благоданы А. Б. Лычаку за помощь. 
+
+Первый автор частично поддержан Российским фондом фундаментальных исследований, грант 20-01-00070;
+второй автор поддержан Национальным научным фондом, грант DMS-2005279.
+
+{\sloppy
+\printbibliography[heading=bibintoc]
+\fussy
+}
+
+\Addresses
+\end{document}
