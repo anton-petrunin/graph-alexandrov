@@ -98,6 +98,9 @@ pdfauthor={\theauthors}}
 \par\medskip}
 \newenvironment{thm}{\claim}{\endclaim}
 
+\newcommand*{\z}[1]{#1\nobreak\discretionary{}%
+            {\hbox{$\mathsurround=0pt #1$}}{}}
+
 
 \begin{document}
 %\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
@@ -257,24 +260,97 @@ Then $\Gamma$ is a multipath.
 \end{thm}
 
 \parit{Proof.}
-Let us denote by $|\ -\ |_\Gamma$ the path metric on the vertex set of $\Gamma$;
-it is equal to the number of edges in a shortest path connecting two vertices.
-Note that it is sufficient to show that 
+We will denote by $|\ -\ |_\Gamma$ the path metric on the vertex set of $\Gamma$;
+it is the number of edges in a shortest path connecting two vertices.
+Let us show that 
 \[|u-w|_\Gamma\geqslant |u-v|_\Gamma\geqslant|v-w|_\Gamma\geqslant 2
 \quad\Longrightarrow\quad |u-w|_\Gamma=|u-v|_\Gamma+|v-w|_\Gamma
 \leqno({*})\]
 for any three vertices $u$, $v$, and $w$ in $\Gamma$.
 
-Suppose $({*})$ does not hold for $u$, $v$, and $w$.
-Let $\Delta$ be the subgraph of $\Gamma$ induced by three shortest paths between the triple $u$, $v$, $w$.
+Suppose $({*})$ does not hold.
+Let $\Delta$ be the subgraph of $\Gamma$ induced by three shortest paths between each pair in the triple $u$, $v$, $w$.
 \begin{figure}[ht!]
 \centering
 \includegraphics{mppics/pic-25}
 \end{figure}
 Note that $\Delta$ is either a cycle
 or it has three paths from a vertex, say $o$, to each of $u$, $v$, and $w$ such that each of these paths do not visit the remaining vertices in the triple.
-In these cases, we have $C_4\prec\Delta$ and $T_3\prec\Delta$ respectively.
-By the observation above $\Delta\prec\Gamma$ --- the lemma is proved.
+In these cases, we have $C_4\prec\Delta$ or $T_3\prec\Delta$ respectively.
+By the observation above $\Delta\prec\Gamma$; $({*})$ is proved.
+
+Denote by $d$ the diameter of $\Gamma$.
+We can assume that $d\geqslant 2$;
+if $d=1$, then $\Gamma$ is a complete graph; in particular, it is a multipath.
+
+Choose vertices $p$ and $q$ such that $|p-q|_\Gamma=d$.
+Let us show that $\Gamma$ is a multipath with the following level function
+\[\ell(w)=
+\begin{cases}
+\hfil |p-w|_\Gamma&\text{if}\quad |p-w|_\Gamma\geqslant 2,
+\\
+d-|q-w|_\Gamma&\text{if}\quad |q-w|_\Gamma\geqslant 2,
+\\
+\hfil 1&\hfil\text{otherwise.}
+\end{cases}
+\]
+By $({*})$, $|p-w|_\Gamma+|q-w|_\Gamma=d$ if $|p-w|_\Gamma\geqslant 2$ and $|q-w|_\Gamma\geqslant 2$;
+therefore $\ell$ is well defined.
+
+If $d\geqslant 4$, then the statement follows from $({*})$.
+Two cases remain: $d=2$ and $d=3$.
+
+\begin{wrapfigure}{r}{17 mm}
+\vskip-6mm
+\centering
+\includegraphics{mppics/pic-26}
+\vskip-2mm
+\end{wrapfigure}
+
+Observe that the fan graph on the diagram cannot accrue as an induced subgraph of $\Gamma$.
+If this is the case, then applying the vertex fusion to the ends of the marked edge, we could get a tripod --- a contradiction.
+
+\parit{Case $d=2$.}
+By $({*})$, $\ell^{-1}(0)$ and $\ell^{-1}(2)$ are cliques.
+Observe that $\ell(v)=1$ if and only if $p\sim v$ and $q\sim v$.
+Note that $\ell^{-1}(1)$ is a clique;
+indeed, if $u\nsim v$ for some $u,v\in\ell^{-1}(1)$,
+then the subgraph induced by $\{p,q,u,v\}$ is a four-cycle --- a contradiction.
+It remains to show that $u\sim v$, $v\sim w$, and $u\nsim w$ if $\ell(u)=0$, $\ell(v)=1$, and $\ell(w)=2$.
+
+\begin{wrapfigure}{r}{17 mm}
+\vskip-2mm
+\centering
+\includegraphics{mppics/pic-27}
+\vskip4mm
+\includegraphics{mppics/pic-28}
+\end{wrapfigure}
+
+Suppose $u\sim w$; note that $v\sim u$ and $v\sim w$ otherwise $\Gamma$ contains an induced 4- or 5-cycle with vertices $p, u, v, w, q$.
+Therefore the induced graph for $\{p,u,v,w,q\}$ is isomorphic to the fan --- a contradiction.
+
+Now, suppose $v\nsim w$; note that $w\ne q$.
+Denote by $m$ a midvertex of $w$ and $p$;
+from above, $\ell(m)=1$.
+And again, the induced graph for $\{p,v,m,w,q\}$ is isomorphic to the fan --- a contradiction.
+The same way one shows that $u\sim v$.
+
+\parit{Case $d=3$.}
+We need to show that $u\sim v$ if $\ell(u)=2$ and $\ell(v)=3$;
+the rest of conditions follow from $({*})$.
+
+\begin{wrapfigure}{r}{20 mm}
+\vskip-8mm
+\centering
+\includegraphics{mppics/pic-29}
+\vskip-2mm
+\end{wrapfigure}
+
+Suppose the contrary;
+let $u'$ ($v'$) be a midvertex of $u$ and $q$ (respectively, $v$ and $p$ ).
+Observe that $\ell(u')=3$, $\ell(v')=2$, and $u'\sim v'$ (otherwise the subgraph induced by $\{u,v,u',v'\}$ is a four-cycle).
+It follows that the subgraph induced by $\{p,q,u,v,u',v'\}$ is shown on the diagram.
+Note that it contains the fan --- a contradiction. 
 \qeds
 
 

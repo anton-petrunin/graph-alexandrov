@@ -264,6 +264,102 @@ label.top (btex $w$ etex,  z.w+z.shift);
 label.top (btex $o$ etex,  z.wuu+z.shift+(1,0));
 endfig;
 
+beginfig(26) 
+save u;
+u:=.5cm;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1 rotated 60;
+z3=z1 rotated 120;
+z4=z1 rotated 180;
+
+z.shift=(0,-2.5)*u;
+z5=z1 rotated 90;
+
+draw z2--z0--z4--z3--z2--z1--z0--z3;
+
+rimmark(z2--z3);
+
+draw (z1--z0--z4) shifted z.shift;
+draw (z0--z5) shifted z.shift;
+
+dOt z0,z1,z2,z3,z4,z0+z.shift,z1+z.shift,z5+z.shift,z4+z.shift;
+
+label (btex $\downarrow$ etex,  0.5[z0,z5+z.shift]);
+
+endfig;
+
+beginfig(27) 
+save u;
+u:=.5cm;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1 rotated 60;
+z3=z1 rotated 120;
+z4=z1 rotated 180;
+
+draw z2--z0--z4--z3--z2--z1--z0--z3;
+
+dOt z0,z1,z2,z3,z4;
+
+label.bot (btex $v$ etex,  z0);
+label.lft (btex $p$ etex,  z4);
+label.ulft (btex $u$ etex,  z3);
+label.urt (btex $w$ etex,  z2);
+label.rt (btex $q$ etex,  z1);
+
+endfig;
+
+beginfig(28) 
+save u;
+u:=.5cm;
+
+z0=origin;
+z1=(1,0)*u;
+z2=z1 rotated 60;
+z3=z1 rotated 120;
+z4=z1 rotated 180;
+
+draw z2--z0--z4--z3--z2--z1--z0--z3;
+
+
+dOt z0,z1,z2,z3,z4;
+
+label.bot (btex $m$ etex,  z0);
+label.lft (btex $p$ etex,  z4);
+label.ulft (btex $v$ etex,  z3);
+label.urt (btex $q$ etex,  z2);
+label.rt (btex $w$ etex,  z1);
+
+endfig;
+
+beginfig(29) 
+save u;
+u:=.5cm;
+
+z2=origin;
+z1=(0,1)*u rotated 30;
+z0=z1 rotated 60;
+z3=z1 rotated -60;
+z4=z1 rotated -120;
+z5=z3+z4;
+
+draw z1--z0--z2--z1--z3--z2--z4--z3--z5--z4;
+
+
+dOt z0,z1,z2,z3,z4,z5;
+
+label.llft (btex $p$ etex,  z0);
+label.ulft (btex $u$ etex,  z1);
+label.top (btex $u'$ etex,  z3);
+label.bot (btex $v'$ etex,  z2);
+label.lrt (btex $v$ etex,  z4);
+label.urt (btex $q$ etex,  z5);
+
+endfig;
+
 beginfig(30) 
 save u;
 u:=.5cm;

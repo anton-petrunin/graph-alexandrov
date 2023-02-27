@@ -1,7 +1,6 @@
 \documentclass{article}
 \usepackage{amssymb, amsfonts, amsmath, amsthm}
 \usepackage{enumerate}
-\usepackage{caption}
 \usepackage[colorlinks=true,
 citecolor=black,
 linkcolor=black,
@@ -10,17 +9,12 @@ filecolor=black,
 menucolor=black,
 urlcolor=black%,
 ]{hyperref}
-\usepackage[normalem]{ulem}
-\usepackage{cancel}
-\usepackage{array}
-\usepackage{longtable}
 
 \usepackage{epsfig,lpic,wrapfig}
-\usepackage{bm}%makes better bold fornt in math
 \usepackage{multicol}
 
-\usepackage[utf8]{inputenc}
 \usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
 \usepackage[
 %slovak,
 german,
@@ -50,9 +44,6 @@ isbn=false]{biblatex}
 \DeclareFieldFormat{multipostnote}{#1}
 \DeclareFieldFormat{pages}{#1}
 
-\newcommand{\nofootnote}[1]{%
-\begingroup\def\thefootnote{}\footnotetext{#1}\endgroup}
-
 \def\thetitle{Граф-сравниения и условия Александрова}
 \def\theauthors{Н. Д. Лебедева и А. М. Петрунин}
 \hypersetup{pdftitle={\thetitle},
@@ -60,22 +51,26 @@ pdfauthor={\theauthors}}
 
 \newcommand{\Addresses}{{\bigskip\footnotesize
 
-\noindent Nina Lebedeva,
+\noindent Н. Д. Лебедева,
 \par\nopagebreak
- \textsc{St. Petersburg State University, 7/9 Universitetskaya nab., St. Petersburg, 199034, Russia}
+ \textsc{Санкт-Петербургский государственный университет, Университетская наб., д. 7–9, Санкт-Петербург, 199034, Россия.}
 \par
 \nopagebreak
- \textsc{St. Petersburg Department of V. A. Steklov Institute of Mathematics of the Russian Academy of Sciences, 27 Fontanka nab., St. Petersburg, 191023, Russia}
+ \textsc{Федеральное  государственное  бюджетное  учреждение  науки
+Санкт-Петербургское  отделение  Математического  института
+им. В. А. Стеклова  Российской  академии  наук, наб. Фонтанки 27,
+191023 Санкт-Петербург,
+Россия }
   \par\nopagebreak
-  \textit{Email}: \texttt{lebed@pdmi.ras.ru}
+  \textit{Электронный адрес}: \texttt{lebed@pdmi.ras.ru}
 
 \medskip
 
-\noindent   Anton Petrunin, 
+\noindent   А. М. Петрунин, 
 \par\nopagebreak
  \textsc{Math. Dept. PSU, University Park, PA 16802, USA.}
   \par\nopagebreak
-  \textit{Email}: \texttt{petrunin@math.psu.edu}
+  \textit{Электронный адрес}: \texttt{petrunin@math.psu.edu}
   
 }}
 
@@ -117,7 +112,7 @@ pdfauthor={\theauthors}}
 Граф-сравнения были введены в \cite{lebedeva-petrunin-zolotov} и изучалось далее в \cite{toyoda,toyoda2019,lebedeva-petrunin-CBB,lebedeva,lebedeva-petrunin,lebedeva-petrunin-octahedron}.
 Перечислим некоторые из результатов.
 \begin{itemize}
-\item Граф-сравнения для триноги и четыре-цикла описывают условия Александрова (см. ниже).
+\item Граф-сравнения для треноги и четыре-цикла описывают условия Александрова (см. ниже).
 \end{itemize}
 \begin{itemize}
 \item Граф-сравнения для звёзд дают более сильный вариант так называемых \emph{неравенств Лэнга --- Шрёдера --- Штурма} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
@@ -154,7 +149,7 @@ pdfauthor={\theauthors}}
 \begin{align*}
 v_i\sim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\leqslant | v_i-v_j|_{X},
 \\
-v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqslant | v_i-v_j|_{X};
+v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqslant | v_i-v_j|_{X},
 \end{align*}
 где $|\ -\ |_X$ обозначает расстояние в~$X$.
 (Обратите внимание, что здесь $v_i$ относится и к вершине $\Gamma$ и к соответственной точке $X$.)
@@ -165,19 +160,19 @@ v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqsl
 \includegraphics{mppics/pic-10}
 \end{wrapfigure}
 
-Обозначим через $T_3$ и $C_4$ триногу и четыре-цикл показанные на рисунке.
+Обозначим через $T_3$ и $C_4$ треногу и четыре-цикл показанные на рисунке.
 Их сравнения эквивалентны соответственно неотрицательной и неположительной кривизне в смысле Александрова \cite{lebedeva-petrunin-zolotov}.
 Эти определения обычно используются для пространств с внутренней метрикой,
-однако их можно применять и к проивольным метрическим пространствам.
+однако их можно применять и к произвольным метрическим пространствам.
 Последнее соглашение используется например в \cite{alexander2019alexandrov}.
 
 \begin{thm}{Теорема}
-Пусть $\Gamma$ --- произвольный конечный граф.
-Тогда либо $\Gamma$-сравнение выполняется в любом метрическом пространстве,
+Пусть $\Gamma$ --- конечный граф.
+Тогда, либо $\Gamma$-сравнение выполняется в любом метрическом пространстве,
 любо оно влечёт $C_4$- или $T_3$-сравнение.
 \end{thm}
 
-Утверждение ниже является следсвием из доказательства теоремы;
+Утверждение ниже является следствием из доказательства теоремы;
 оно описывает все графы с тривиальным сравнением.
 
 \begin{thm}{Следствие}
@@ -201,7 +196,7 @@ v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqsl
 Заметим, что $\Gamma$-сравнение эквивалентно выполнению всех $\Gamma_i$-сравнений.
 Таким образом можно предположить, что $\Gamma$ связен.
 
-Положим как и выше, что $v_1,\dots,v_n$ --- вершины $\Gamma$.
+Положим, как и выше, что $v_1,\dots,v_n$ --- вершины $\Gamma$.
 Удалим из $\Gamma$ пару вершин, скажем $v_1$ и $v_2$.
 Добавим вместо них новую вершину $w$ так, что для любой другой вершины $u$ выполняется следующее
 \begin{itemize}
@@ -211,7 +206,7 @@ v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqsl
 \end{itemize}
 Пусть $\Gamma'$ --- полученный граф.
 
-Пролагая в определении $\Gamma$-сравнения, что $v_1=v_2$ в $X$,
+Полагая в определении $\Gamma$-сравнения, что точки $v_1$ и $v_2$ совпадают в $X$,
 мы приходим к следующему.
 
 \begin{thm}{Утверждение}
@@ -259,8 +254,8 @@ $$v\sim w
 
 \parit{Доказательство.}
 Обозначим через $|\ -\ |_\Gamma$ метрику кратчайшего пути на~$\Gamma$;
-она равна числу рёбер в кратчайшем пути между двумя вершинами.
-Достаточно доказать, что
+она выдаёт число рёбер в кратчайшем пути между двумя вершинами.
+Заметим, что достаточно доказать следующее:
 \[|u-w|_\Gamma\geqslant |u-v|_\Gamma\geqslant|v-w|_\Gamma\geqslant 2
 \quad\Longrightarrow\quad |u-w|_\Gamma=|u-v|_\Gamma+|v-w|_\Gamma
 \leqno({*})\]
@@ -274,7 +269,7 @@ $$v\sim w
 \end{figure}
 Заметим, что $\Delta$ либо является циклом,
 либо он содержит три пути из некоторой вершины, скажем $o$, до  $u$, $v$ и $w$ таких, что каждый путь не заходит в оставшиеся вершины тройки.
-В этих случаях имеем $C_4\prec\Delta$ или $T_3\prec\Delta$ соответсвенно.
+В этих случаях имеем $C_4\prec\Delta$ или $T_3\prec\Delta$ соответственно.
 Применив наблюдение выше, поучаем $\Delta\prec\Gamma$ --- лемма доказана.
 \qeds
 
@@ -312,7 +307,7 @@ $$v\sim w
 \end{figure}
 \qedsf
 
-Остаётся показать, что для любго мультипути $\Gamma$ описанного в предложении
+Остаётся показать, что для любого мультипути $\Gamma$ описанного в предложении
 $\Gamma$-сравнение тривиально.
 Мы проделаем это явно указав координаты конфигурации сравнения на вещественной прямой.
 
@@ -326,7 +321,7 @@ $\Gamma$-сравнение тривиально.
 В этом случае $\Gamma$-сравнение тривиально.
 Остаётся рассмотреть случаи $m\geqslant2$.
 
-Выберем вершину $w$, которая единстванна на своём уровне и не очень далека от середины $\Gamma$.
+Выберем вершину $w$, которая единственна на своём уровне и не очень далека от середины $\Gamma$.
 А именно, если $m\geqslant 4$, то возьмём за $w$ вершину на втором уровне; 
 согласно предложению, она в нём единственна.
 Если $m=3$, то согласно предложению можно предположить, что $k_2=1$;
@@ -345,8 +340,8 @@ $\Gamma$-сравнение тривиально.
 Далее мы приведём ещё пару наблюдений о граф-сравнении общего характера.
 
 Граф-сравнения для всех полных двудольных графов влекут так называемые \emph{чистые неравенства отрицательного типа} \cite[6.1.1]{deza-laurent-ru}.
-По критерию Шёнберга, этих неравенств достаточно для существования изометрического вложения в гильбетово пространство \cite[6.2.1]{deza-laurent}.
-В частности выпонение сравнений для всех графов влечёт, что метрическое пространство изометрично подмножеству гильбертова пространства.
+По критерию Шёнберга, этих неравенств достаточно для существования изометрического вложения в гильбертово пространство \cite[6.2.1]{deza-laurent}.
+В частности выполнение сравнений для всех графов влечёт, что метрическое пространство изометрично подмножеству гильбертова пространства.
 Последнее утверждение можно доказать также и тем же путём, что \cite[Prop. 1.9]{toyoda}
 
 
@@ -361,14 +356,10 @@ $\Gamma$-сравнение тривиально.
 Для пространств с внутренней метрикой большинство граф-сравнений влекут то, что пространство изометрично подмножеству гильбертова пространства.
 Действительно, если $C_4\prec\Gamma$ и $T_3\prec\Gamma$ (как для графа на рисунке),
 то любое полное пространство с внутренней метрикой имеет нулевую кривизну в смысле Александрова; 
-в частности изометрично выпукому множеству гильбертова пространства.
-
-
-
-
+в частности изометрично выпуклому множеству гильбертова пространства.
 
 \parbf{Благодарности.}
-Мы благоданы А. Б. Лычаку за помощь. 
+Мы благодарны А. Б. Лычаку за помощь. 
 
 Первый автор частично поддержан Российским фондом фундаментальных исследований, грант 20-01-00070;
 второй автор поддержан Национальным научным фондом, грант DMS-2005279.
