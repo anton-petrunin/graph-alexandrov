@@ -125,7 +125,7 @@ Let us mention some of the results.
 \item Graph comparisons for the tripod and four-cycle capture nonnegative and nonpositive curvature in the sense of Alexandrov; see below.
 \end{itemize}
 \begin{itemize}
-\item Graph comparison for star graphs is used to formulate a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
+\item Graph comparison for star graphs provides a stronger version of the so-called \emph{Lang--Schroeder--Sturm inequality} \cite{lang-schroeder, sturm, lebedeva-petrunin-CBB}.
 \end{itemize}
 \begin{itemize}
 \item The all-tree comparison gives a metric description of target spaces of submetries from subsets of Hilbert space \cite{lebedeva-petrunin-zolotov}.
@@ -135,7 +135,7 @@ Let us mention some of the results.
 \begin{minipage}
 {.80\textwidth}
 \begin{itemize}
-\item The comparison for the tree on the diagram has tight relation with the \emph{transport continuity property} and the so-called \emph{MTW condition} that was introduced by Xi-Nan Ma, Neil Trudinger, and Xu-Jia Wang~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
+\item The comparison for the tree on the diagram has tight relation with the \emph{transport continuity property} and the so-called \emph{Ma--Trudinger--Wang condition}~\cite{lebedeva-petrunin-zolotov,ma-trudinger-wang}.
 \end{itemize}
 \end{minipage}
 \hfill
@@ -161,8 +161,8 @@ v_i\sim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\leqsla
 \\
 v_i\nsim v_j\quad&\Longrightarrow\quad|\tilde v_i-\tilde v_j|_{\mathbb{H}}\geqslant | v_i-v_j|_{X};
 \end{align*}
-here $|\ -\ |_X$ denotes distance in the metric space~$X$.
-(Note that $v_i$ may refer to a vertex in $\Gamma$ and to the corresponding point in $X$.)
+here $|\ -\ |_X$ denotes the metric in~$X$.
+(Note that $v_i$ refers to a vertex in $\Gamma$ and to the corresponding point in $X$.)
 
 \begin{wrapfigure}{r}{35 mm}
 \vskip-0mm
@@ -182,8 +182,8 @@ Then either $\Gamma$-comparison holds in any metric space,
 or it implies $C_4$- or $T_3$-comparison.
 \end{thm}
 
-The following corollary describes all graphs $\Gamma$ with trivial $\Gamma$-comparison;
-it follows from the proof of the theorem.
+The next statement is a corollary from the proof of the theorem;
+it describes all graphs with trivial comparison.
 
 \begin{thm}{Corollary} Let $\Gamma$ be a finite connected graph.
 Suppose that $\Gamma$-comparison is trivial;
@@ -210,7 +210,7 @@ Remove two vertices, say $v_1$ and $v_2$, from $\Gamma$, and add a new vertex $w
 \begin{itemize}
  \item if $u\sim v_1$ and $u\sim v_2$, then $u\sim w$;
  \item if $u\nsim v_1$ and $u\nsim v_2$, then $u\nsim w$;
- \item in the remaining cases we may choose $u\sim w$ or $u\nsim w$.
+ \item in the remaining cases, we may choose $u\sim w$ or $u\nsim w$.
 \end{itemize}
 Denote the obtained graph by $\Gamma'$.
 
@@ -221,15 +221,15 @@ If $\Gamma$-comparison holds in a metric space $X$, then so does $\Gamma'$-compa
 
 \end{thm}
 
-The operation that produces $\Gamma'$ from $\Gamma$ will be called \emph{vertex fusion}.
+The described construction of $\Gamma'$ from $\Gamma$ will be called \emph{vertex fusion}.
 If a graph $\Delta$ can be obtained from $\Gamma$ applying vertex fusion several times, then we will write $\Delta\prec \Gamma$.
 
-Note that the claim implies the following two observations:
+From above we get the following two observations:
 \begin{itemize}
  \item If $\Delta$ is an induced subgraph of a connected finite graph $\Gamma$, then $\Delta\prec \Gamma$.
  \item If $\Delta\prec \Gamma$, then $\Gamma$-comparison implies $\Delta$-comparison.
 \end{itemize}
-Taking all the above into account, we get the following reformulation of the theorem.
+Hence we get the following reformulation of the theorem.
 
 \begin{thm}{Reformulation}
 For any finite connected graph $\Gamma$,
@@ -275,7 +275,7 @@ Let $\Delta$ be the subgraph of $\Gamma$ induced by three shortest paths between
 \includegraphics{mppics/pic-25}
 \end{figure}
 Note that $\Delta$ is either a cycle
-or it has three paths from a vertex, say $o$, to each of $u$, $v$, and $w$ such that each of these paths do not visit the remaining vertices in the triple.
+or it has three paths from a vertex, say $o$, to each of $u$, $v$, and $w$ such that each of these paths does not visit the remaining vertices in the triple.
 In these cases, we have $C_4\prec\Delta$ or $T_3\prec\Delta$ respectively.
 By the observation above $\Delta\prec\Gamma$; $({*})$ is proved.
 
@@ -298,7 +298,7 @@ By $({*})$, $|p-w|_\Gamma+|q-w|_\Gamma=d$ if $|p-w|_\Gamma\geqslant 2$ and $|q-w
 therefore $\ell$ is well defined.
 
 If $d\geqslant 4$, then the statement follows from $({*})$.
-Two cases remain: $d=2$ and $d=3$.
+Two cases remain $d=2$ and $d=3$.
 
 \begin{wrapfigure}{r}{17 mm}
 \vskip-6mm
@@ -307,7 +307,7 @@ Two cases remain: $d=2$ and $d=3$.
 \vskip-2mm
 \end{wrapfigure}
 
-Observe that the fan graph on the diagram cannot accrue as an induced subgraph of $\Gamma$.
+Observe that the fan graph on the diagram cannot appear as an induced subgraph of $\Gamma$.
 If this is the case, then applying the vertex fusion to the ends of the marked edge, we could get a tripod --- a contradiction.
 
 \parit{Case $d=2$.}
@@ -316,6 +316,7 @@ Observe that $\ell(v)=1$ if and only if $p\sim v$ and $q\sim v$.
 Note that $\ell^{-1}(1)$ is a clique;
 indeed, if $u\nsim v$ for some $u,v\in\ell^{-1}(1)$,
 then the subgraph induced by $\{p,q,u,v\}$ is a four-cycle --- a contradiction.
+
 It remains to show that $u\sim v$, $v\sim w$, and $u\nsim w$ if $\ell(u)=0$, $\ell(v)=1$, and $\ell(w)=2$.
 
 \begin{wrapfigure}{r}{17 mm}
@@ -326,18 +327,19 @@ It remains to show that $u\sim v$, $v\sim w$, and $u\nsim w$ if $\ell(u)=0$, $\e
 \includegraphics{mppics/pic-28}
 \end{wrapfigure}
 
-Suppose $u\sim w$; note that $v\sim u$ and $v\sim w$ otherwise $\Gamma$ contains an induced 4- or 5-cycle with vertices $p, u, v, w, q$.
-Therefore the induced graph for $\{p,u,v,w,q\}$ is isomorphic to the fan --- a contradiction.
+Suppose $u\sim w$. 
+Note that $v\sim u$ and $v\sim w$; otherwise, $\Gamma$ contains an induced 4- or 5-cycle with vertices $p, u, v, w, q$.
+Therefore the induced subgraph for $\{p,u,v,w,q\}$ is isomorphic to the fan --- a contradiction.
 
 Now, suppose $v\nsim w$; note that $w\ne q$.
-Denote by $m$ a midvertex of $w$ and $p$;
-from above, $\ell(m)=1$.
-And again, the induced graph for $\{p,v,m,w,q\}$ is isomorphic to the fan --- a contradiction.
+Denote by $m$ a midvertex of $w$ and $p$.
+From above, $\ell(m)=1$; in particular, $v\sim m\sim q$.
+And again, the induced subgraph for $\{p,v,m,w,q\}$ is isomorphic to the fan --- a contradiction.
 The same way one shows that $u\sim v$.
 
 \parit{Case $d=3$.}
 We need to show that $u\sim v$ if $\ell(u)=2$ and $\ell(v)=3$;
-the rest of conditions follow from $({*})$.
+the rest follows from $({*})$.
 
 \begin{wrapfigure}{r}{20 mm}
 \vskip-8mm
@@ -347,7 +349,7 @@ the rest of conditions follow from $({*})$.
 \end{wrapfigure}
 
 Suppose the contrary;
-let $u'$ ($v'$) be a midvertex of $u$ and $q$ (respectively, $v$ and $p$ ).
+let $u'$ ($v'$) be a midvertex of $u$ and $q$ (respectively, $v$ and $p$).
 Observe that $\ell(u')=3$, $\ell(v')=2$, and $u'\sim v'$ (otherwise the subgraph induced by $\{u,v,u',v'\}$ is a four-cycle).
 It follows that the subgraph induced by $\{p,q,u,v,u',v'\}$ is shown on the diagram.
 Note that it contains the fan --- a contradiction. 
@@ -391,7 +393,7 @@ In each case, we arrive at a contradiction by applying vertex fusion to the ends
 It remains to show that $\Gamma$-comparison is trivial for every multipath $\Gamma$ described in the proposition.
 This is done by prescribing the coordinates for the needed model configuration on the real line.
 
-Each edge of $\Gamma$ comes with weight --- the distance between the endpoints in $X$.
+Each edge of $\Gamma$ comes with weight --- the distance between the endpoints in~$X$.
 Define the distance $\|v-w\|_\Gamma$ as the minimal total weight of paths connecting $v$ to $w$ in $\Gamma$.
 Note that 
 \[\|v-w\|_\Gamma\geqslant |v-w|_X\]
@@ -418,8 +420,8 @@ The statements in the preface indicate that for a carefully chosen graph (or a f
 Let us state two more observations about graph comparison.
 
 Graph comparisons for all complete bipartite graphs imply the so-called \emph{pure inequalities of negative type} \cite[6.1.1]{deza-laurent}.
-By Schoenberg's criterion, these inequalities are sufficient for existence of isometric embedding into a Hilbert space \cite[6.2.1]{deza-laurent}.
-In particular the comparisons for all graphs imply that the metric space is isometric to a subset of a Hilbert space.
+By Schoenberg's criterion, these inequalities are sufficient for the existence of isometric embedding into a Hilbert space \cite[6.2.1]{deza-laurent}.
+In particular, the comparisons for all graphs imply that the metric space is isometric to a subset of a Hilbert space.
 The latter can be also proved the same way as Proposition 1.9 in \cite{toyoda}.
 
 \begin{wrapfigure}{r}{17 mm}
@@ -430,8 +432,8 @@ The latter can be also proved the same way as Proposition 1.9 in \cite{toyoda}.
 \end{wrapfigure}
 
 The last observation works for arbitrary metrics.
-For length metrics, most of graph comparisons imply that the space is isometric to a subset of a Hilbert space.
-Indeed if $C_4\prec\Gamma$ and $T_3\prec\Gamma$ (as for the graph on the diagam), then any complete length space that meets $\Gamma$-comparison has vanishing curvature in the sense of Alexandrov; in particular, it is isometric to a convex closed set in a Hilbert space.
+For length metrics, most graph comparisons imply that the space is isometric to a subset of a Hilbert space.
+Indeed if $C_4\prec\Gamma$ and $T_3\prec\Gamma$ (as for the graph on the diagram), then any complete length space that meets $\Gamma$-comparison has vanishing curvature in the sense of Alexandrov; in particular, it is isometric to a convex closed set in a Hilbert space.
 
 
 

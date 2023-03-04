@@ -510,6 +510,154 @@ z.cc31+z.sshift-z.cc
 
 endfig;
 
+beginfig(31) 
+save u;
+u:=.5cm;
+
+z.a31=(0,-.5)*u;
+z.a32=(0,.5)*u;
+z.a2=(-1,0)*u;
+z.a1=(-2,0)*u;
+z.a4=(1,0)*u;
+z.a5=(2,0)*u;
+
+draw z.a1--z.a2--z.a31--z.a4--z.a5;
+draw z.a2--z.a32--z.a4;
+draw z.a31--z.a32;
+rimmark(z.a2--z.a31);
+
+z.bb=(6.5,0)*u;
+
+z.b1=(-1.5,0)*u+z.bb;
+z.b21=(-.5,-.5)*u+z.bb;
+z.b22=(-.5,.5)*u+z.bb;
+z.b31=(.5,-.5)*u+z.bb;
+z.b32=(.5,.5)*u+z.bb;
+z.b4=(1.5,0)*u+z.bb;
+
+draw z.b1--z.b21--z.b31--z.b4--z.b32--z.b22--cycle;
+draw z.b21--z.b22--z.b31--z.b32--cycle;
+rimmark(z.b22--z.b32);
+
+z.cc=z.bb+ (6.5,0)*u;
+
+z.c11=(-1,-.5)*u+z.cc;
+z.c12=(-1,.5)*u+z.cc;
+z.c21=(0,-.5)*u+z.cc;
+z.c22=(0,.5)*u+z.cc;
+z.c31=(1,-.5)*u+z.cc;
+z.c32=(1,.5)*u+z.cc;
+
+draw z.c11--z.c22--z.c31--z.c32--z.c21--z.c12;
+draw z.c31--z.c21--z.c11--z.c12--z.c22--z.c32;
+draw z.c21--z.c22;
+rimmark(z.c12--z.c22);
+
+z.shift=(0,-3)*u;
+
+z.aa1=(-1.5,0)*u+z.shift;
+z.aa2=(-.5,0)*u+z.shift;
+z.aa3=(0,1)*u+z.shift;
+z.aa4=(.5,0)*u+z.shift;
+z.aa5=(1.5,0)*u+z.shift;
+
+draw z.aa1--z.aa2--z.aa3--z.aa4--z.aa5;
+draw z.aa2--z.aa4;
+rimmark(z.aa2--z.aa4);
+
+z.bb1=(-1.5,0)*u+z.shift+z.bb;
+z.bb2=(-.5,0)*u+z.shift+z.bb;
+z.bb3=(0,1)*u+z.shift+z.bb;
+z.bb4=(.5,0)*u+z.shift+z.bb;
+z.bb5=(1.5,0)*u+z.shift+z.bb;
+
+draw z.bb1--z.bb2--z.bb3--z.bb4--z.bb5;
+draw z.bb2--z.bb4;
+rimmark(z.bb2--z.bb4);
+
+z.sshift=z.shift+(0,.5)*u;
+
+z.cc11=z.c11+z.sshift;
+z.cc21=z.c21+z.sshift;
+z.cc22=z.c22+z.sshift;
+z.cc31=z.c31+z.sshift;
+z.cc32=z.c32+z.sshift;
+
+draw z.cc11--z.cc22--z.cc32;
+draw z.cc31--z.cc32;
+draw z.cc31--z.cc21--z.cc11--z.cc22;
+draw z.cc22--z.cc21--z.cc32;
+rimmark(z.cc22--z.cc32);
+
+draw (z.cc11--z.cc21--z.cc31) shifted z.sshift;
+draw (z.cc21--z.cc22) shifted z.sshift;
+
+draw (z.cc11--z.cc21--z.cc31) shifted (z.sshift-z.cc);
+draw (z.cc21--z.cc22) shifted (z.sshift-z.cc);
+
+draw (z.cc11--z.cc21--z.cc31) shifted (z.sshift-z.cc+z.bb);
+draw (z.cc21--z.cc22) shifted (z.sshift-z.cc+z.bb);
+
+
+label (btex $\downarrow$ etex,  z.a31+(0,-.75*u));
+label (btex $\downarrow$ etex,  .5[z.b21,z.b31]+(0,-.75*u));
+label (btex $\downarrow$ etex,  z.c21+(0,-.75*u));
+label (btex $\downarrow$ etex,  z.a31+(0,-.75*u)+z.sshift);
+label (btex $\downarrow$ etex,  .5[z.b21,z.b31]+(0,-.75*u)+z.sshift);
+label (btex $\downarrow$ etex,  z.c21+(0,-.75*u)+z.sshift);
+
+dOt z.a31,
+z.a32,
+z.a2,
+z.a1,
+z.a4,
+z.a5,
+z.b1,
+z.b21,
+z.b22,
+z.b31,
+z.b32,
+z.b4,
+z.c11,
+z.c12,
+z.c21,
+z.c22,
+z.c31,
+z.c32,
+z.aa1,
+z.aa2,
+z.aa3,
+z.aa4,
+z.aa5,
+z.bb1,
+z.bb2,
+z.bb3,
+z.bb4,
+z.bb5,
+z.cc11,
+z.cc21,
+z.cc22,
+z.cc31,
+z.cc32,
+z.cc11+z.sshift,
+z.cc21+z.sshift,
+z.cc21+z.sshift,
+z.cc22+z.sshift,
+z.cc31+z.sshift,
+z.cc11+z.sshift-z.cc+z.bb,
+z.cc21+z.sshift-z.cc+z.bb,
+z.cc21+z.sshift-z.cc+z.bb,
+z.cc22+z.sshift-z.cc+z.bb,
+z.cc31+z.sshift-z.cc+z.bb,
+z.cc11+z.sshift-z.cc,
+z.cc21+z.sshift-z.cc,
+z.cc21+z.sshift-z.cc,
+z.cc22+z.sshift-z.cc,
+z.cc31+z.sshift-z.cc
+;
+
+endfig;
+
 beginfig(40) 
 save u;
 u:=.5cm;
