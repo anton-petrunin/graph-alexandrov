@@ -7,7 +7,7 @@ linkcolor=black,
 anchorcolor=black,
 filecolor=black,
 menucolor=black,
-urlcolor=black%,
+urlcolor=black
 ]{hyperref}
 
 \usepackage{epsfig,lpic,wrapfig}
@@ -16,18 +16,15 @@ urlcolor=black%,
 \usepackage[T1,T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[
-%slovak,
 german,
-%french,
 english,
 russian]{babel}
 
 \usepackage[
-sorting=debug,
+sorting=none,
 bibencoding=auto,
 backend=biber,
 maxnames=10,
-%babel=other,
 autolang=other,
 doi=false,
 url=false,
@@ -49,31 +46,6 @@ isbn=false]{biblatex}
 \hypersetup{pdftitle={\thetitle},
 pdfauthor={\theauthors}}
 
-\newcommand{\Addresses}{{\bigskip\footnotesize
-
-\noindent Н. Д. Лебедева,
-\par\nopagebreak
- \textsc{Санкт-Петербургский государственный университет, Университетская наб., д. 7–9, Санкт-Петербург, 199034, Россия.}
-\par
-\nopagebreak
- \textsc{Федеральное  государственное  бюджетное  учреждение  науки
-Санкт-Петербургское  отделение  Математического  института
-им. В. А. Стеклова  Российской  академии  наук, наб. Фонтанки 27,
-191023 Санкт-Петербург,
-Россия }
-  \par\nopagebreak
-  \textit{Электронный адрес}: \texttt{lebed@pdmi.ras.ru}
-
-\medskip
-
-\noindent   А. М. Петрунин, 
-\par\nopagebreak
- \textsc{Math. Dept. PSU, University Park, PA 16802, USA.}
-  \par\nopagebreak
-  \textit{Электронный адрес}: \texttt{petrunin@math.psu.edu}
-  
-}}
-
 \def\parit#1{\medskip\noindent{\it #1}}
 \def\parbf#1{\medskip\noindent{\bf #1}}
 \def\qeds{\qed\par\medskip}
@@ -82,23 +54,20 @@ pdfauthor={\theauthors}}
 \renewcommand{\labelitemi}{$\mathsurround=0pt \diamond$}
 \renewcommand{\labelitemii}{$\mathsurround=0pt \circ$}
 
-%THEOREM
+
 \newcounter{thm}[section]
 \renewcommand{\thethm}{\arabic{thm}}
 \def\claim#1{\par\medskip\noindent\refstepcounter{thm}\hbox{\bf\boldmath #1.}
-\it\ %\ignorespaces
+\it\ 
 }
 \def\endclaim{
 \par\medskip}
 \newenvironment{thm}{\claim}{\endclaim}
 
-\newcommand*{\z}[1]{#1\nobreak\discretionary{}%
-            {\hbox{$\mathsurround=0pt #1$}}{}}
+\newcommand*{\z}[1]{#1\nobreak\discretionary{}{\hbox{$\mathsurround=0pt #1$}}{}}
 
 
 \begin{document}
-%\pagestyle{empty}\renewcommand\includegraphics[2][{}]{}
-
 
 \title{\thetitle}
 \author{\theauthors}
@@ -439,12 +408,37 @@ $\Gamma$-сравнение тривиально.
 Мы благодарны А. Б. Лычаку за помощь. 
 
 Первый автор частично поддержан Российским фондом фундаментальных исследований, грант 20-01-00070;
-второй автор поддержан Национальным научным фондом, грант DMS-2005279.
+второй автор поддержан Национальным научным фондом, грант DMS-2005279
+и
+Министерством образования и науки Российской Федерации, грант 075-15-2022-289.
 
 {\sloppy
 \printbibliography[heading=bibintoc]
 \fussy
 }
 
-\Addresses
+{\bigskip\footnotesize
+
+\noindent Н. Д. Лебедева,
+\par\nopagebreak
+ \textsc{Санкт-Петербургский государственный университет, Университетская наб., д. 7–9, Санкт-Петербург, 199034, Россия.}
+\par
+\nopagebreak
+ \textsc{Федеральное  государственное  бюджетное  учреждение  науки
+Санкт-Петербургское  отделение  Математического  института
+им. В. А. Стеклова  Российской  академии  наук, наб. Фонтанки 27,
+191023 Санкт-Петербург,
+Россия }
+  \par\nopagebreak
+  \textit{Электронный адрес}: \texttt{lebed@pdmi.ras.ru}
+
+\medskip
+
+\noindent   А. М. Петрунин, 
+\par\nopagebreak
+ \textsc{Math. Dept. PSU, University Park, PA 16802, USA.}
+  \par\nopagebreak
+  \textit{Электронный адрес}: \texttt{petrunin@math.psu.edu}
+  
+}
 \end{document}
